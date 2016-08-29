@@ -1,7 +1,7 @@
 /**
  * Created by Administrator on 16-8-17.
  */
-var app=angular.module("shelleyApp",['ui.router','socket']);
+var app=angular.module("shelleyApp",['ui.router']);
 app.config(function($stateProvider,$urlRouterProvider){
     $urlRouterProvider.otherwise('default');
     $urlRouterProvider.when('','default');
@@ -21,7 +21,8 @@ app.config(function($stateProvider,$urlRouterProvider){
         })
         .state('contect',{
             url:'/contect',
-            templateUrl:'./public/views/contect.html'
+            templateUrl:'./public/views/contect.html',
+            contorller:'ContectCtrl'
         });
 });
 //body controller shelleyAppController
@@ -67,4 +68,5 @@ app.controller('shelleyAppController',function($scope){
      {name:"listitem3",icon:"icon-info-sign"},
      {name:"listitem4",icon:"icon-info-sign"}
      ];*/
+    console.log($scope);
 });
