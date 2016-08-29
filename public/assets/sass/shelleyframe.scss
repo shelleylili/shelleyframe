@@ -1,0 +1,36 @@
+
+//base
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,input,article,aside,section,header,footer,textarea,p,blockquote,th,td{
+	margin:0;padding:0;
+	-webkit-tap-highlight-color: transparent;-webkit-font-smoothing:antialiased;-webkit-text-size-adjust:none;
+}
+//colors
+$base-white:#ffffff;
+$base-black:#000000;
+$bg-gray: #647380;
+$bg-green: #0c7d80;
+$bg-blue: #869cff;
+$f-dark-gray:#333333;
+$f-gray:#666666;
+$f-lighter-gray:#999999;
+$f-lightest-gray:#aaaaaa;
+
+html{font-family: "微软雅黑",arial, sans-serif;height:100%;width:100%;}
+body{width:100%;height:100%;background:$base-white;}
+table{ border-collapse:collapse;border-spacing:0;}
+ul,li{list-style: none;}
+fieldset,img{border:0;}
+address,caption,cite,code,dfn,em,strong,th,var{ font-weight:lighter;}
+ol,ul{list-style:none;}
+caption,th{text-align:left;}
+h1,h2,h3,h4,h5,h6{font-size:100%;font-weight:normal;}
+p:before,q:after{content:''}
+abbr,acronym{border:0;}
+#page{height:auto;}
+
+@import "flexlayout";
+@import "navtop";
+@import "navbottom";
+@import "mixin";
+@import "listview";
+@import "chatroom";

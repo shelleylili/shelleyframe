@@ -1,0 +1,16 @@
+//
+@mixin box-shadow($shadow...){
+  -webkit-box-shadow: $shadow;
+  box-shadow: $shadow;
+}
+@mixin transition($transition...){
+  @if $enable-transitions{
+    -webkit-transition: $transition;
+    transition: $transition;
+  }
+}
+@mixin flex($flex){
+  -webkit-flex:$flex;
+  flex:$flex;
+}
+@import "mixins/alert";
