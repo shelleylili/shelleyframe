@@ -143,6 +143,6 @@ app.directive('chatRoom',function(){
                 p.innerHTML = message.text;
                 document.getElementById('message').appendChild(p);
             });
-        }
+        } 
     };
 });
