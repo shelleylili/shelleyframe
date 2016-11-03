@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" ng-app="shelleyApp">
+<html lang="en">
 <head>
     <!-- 声明文档使用的字符编码 -->
     <meta charset='utf-8'>
@@ -99,51 +99,10 @@
     <meta property="og:image" content="图片" />
     <meta property="og:description" content="描述" />
     <title>shelleyframe</title>
-    <link rel="stylesheet" href="./public/dist/shelleyframe.min.css">
-    <script>
-        (function() {
-            // deicePixelRatio ：设备像素
-            var scale = 1 / devicePixelRatio;
-            //设置meta 压缩界面 模拟设备的高分辨率
-            document.querySelector('meta[name="viewport"]').setAttribute('content', 'initial-scale=' + scale + ', maximum-scale=' + scale + ', minimum-scale=' + scale + ', user-scalable=no');
-            //debounce 为节流函数，自己实现。或者引入underscoure即可。
-            var debounce = function(action,idle){
-                var last;
-                return function(){
-                    var ctx = this, args = arguments;
-                    clearTimeout(last)
-                    last = setTimeout(function(){
-                        action.apply(ctx, args)
-                    }, idle)
-                }
-            };
-            var reSize = debounce(function() {
-                var deviceWidth = document.documentElement.clientWidth > 1300 ? 1300 : document.documentElement.clientWidth;
-                //按照640像素下字体为100px的标准来，得到一个字体缩放比例值 6.4
-                document.documentElement.style.fontSize = (deviceWidth / 6.4) + 'px';
-                var pageviewHeight=document.getElementById('page').clientHeight,
-                    deviceHeight=document.documentElement.clientHeight,
-                    htmlFontSize=deviceWidth/6.4,
-                    navtopHeight=Math.floor(htmlFontSize*0.8),
-                    navbottomHeight=Math.floor(htmlFontSize*0.8),
-                    minus=deviceHeight-navbottomHeight-navtopHeight;
-                if(pageviewHeight>minus){
-                    document.body.style.paddingBottom=htmlFontSize*0.8+'px';
-                }
-            }, 50);
-            window.onresize = reSize;
-            window.onload = reSize;
-        })();
-    </script>
 </head>
-<body ng-controller="shelleyAppController">
-    <nav-top navtop-title="title" iconright=""></nav-top>
-    <div ui-view id="page"></div>
-    <nav-bottom></nav-bottom>
-    <script src="./node_modules/angular/angular.js"></script>
-    <script src="./node_modules/angular-ui-router/release/angular-ui-router.js"></script>
-    <script src="./public/dist/shelleyframe.min.js"></script>
-    <script src="https://cdn.socket.io/socket.io-1.4.5.js"></script>
-    <script src="./public/src/js/shelleyframe.js"></script>
+<body>
+	<div>
+		<img src="img/1.jpg" alt="第一张图"/>
+	</div>
 </body>
 </html>
